@@ -28,11 +28,11 @@ The proteins included in the multi-organ and organ-specific models were defined 
 
 
 
-## Example
+## Example of organ age prediction
 
 A simulated toy dataset is provided in the [example directory](/example) to demonstrate the prediction workflow. 
 
-Users can apply the existing [model](model/qr.beta.proteomic.age.tsv) to predict organ aging with the simulated dataset.
+Users can apply the provided [models](model/qr.beta.proteomic.age.tsv) to predict organ age from the simulated dataset.
 
 The example input data includes 
 
@@ -43,7 +43,7 @@ Run the R script [apply_age_model.R](apply_age_model.R) to perform organ age pre
 
 
 
-## Output
+## Output of organ age prediction
 
 The [script](apply_age_model.R) generates a tab-delimited text file containing organ age predictions and predictive uncertainty measures. 
 
@@ -54,9 +54,17 @@ The output includes the following columns:
 - "IID": individual identifier from the simulated dataset.
 - "Organ": organ model name.
 - "Age.QR0.5": predicted organ age using the corresponding organ model indicated in the "Organ" column.
-- "Gap.QR0.5": standardized age gap for the corresponding organ model.
-- "Prob": tail probability for the corresponding organ model.
-- "Interval.Length": length of prediction interval for the corresponding organ model.
+- "Gap.QR0.5": standardized age gap (measure of accelerated or decelerated aging) for the corresponding organ model.
+- "Prob": tail probability (uncertainty quantification) for the corresponding organ model.
+- "Interval.Length": length of prediction interval (uncertainty quantification) for the corresponding organ model.
+
+
+
+## Model training
+
+Use fsQRPPA [https://anonymous.4open.science/r/fsQRPPA-6764/](https://anonymous.4open.science/r/fsQRPPA-6764/) and simulated training dataset.
+
+TBA.
 
 
 
